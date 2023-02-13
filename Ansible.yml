@@ -11,9 +11,9 @@
         
     - name: Install Apache Tomcat
       unarchive:
-        src: http://apache.mirrors.hoobly.com/tomcat/tomcat-9/v9.0.37/bin/apache-tomcat-9.0.37.tar.gz
+        src: wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz
         dest: /opt
-        creates: /opt/apache-tomcat-9.0.37
+        creates: /opt/apache-tomcat-10.0.27
         
     - name: Clone Java Web Calculator repository
       git:
@@ -28,10 +28,10 @@
     - name: Copy web application to Tomcat
       copy:
         src: /opt/JavaWebCalculator/target/JavaWebCalculator.war
-        dest: /opt/apache-tomcat-9.0.37/webapps/
+        dest: /opt/apache-tomcat-10.0.27/webapps/
         
     - name: Start Apache Tomcat
-      command: /opt/apache-tomcat-9.0.37/bin/startup.sh
+      command: /opt/apache-tomcat-10.0.27/bin/startup.sh
       
     - name: Wait for Apache Tomcat to start
       wait_for:
