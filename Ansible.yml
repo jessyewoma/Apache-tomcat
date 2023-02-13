@@ -6,7 +6,7 @@
   tasks:
     - name: Install Java
       yum:
-        name: sudo yum install java-11-openjdk-devel
+        name: Java-11-openjdk-devel
         state: present
         
     - name: Install Apache Tomcat
