@@ -37,11 +37,8 @@
         dest: /home/ec2-user/apache-tomcat-10.0.27/webapps/
         mode: 0755
         
-    - name: Start Apache Tomcat
-      become: yes
-      service:
-        name: tomcat-10.0.27
-        state: started
+    - name: start tomcat services
+      shell: nohup /usr/local/apache-tomcat-10.0.27/bin/startup.sh
 
       
     - name: Wait for Apache Tomcat to start
