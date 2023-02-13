@@ -25,7 +25,7 @@
         dest: /home/ec2-user/Apache-tomcat
         
     - name: Build Java Web Calculator
-      command: /usr/bin/mvn clean install 
+      shell: mvn clean package -Dmaven.test.skip=true 
       args:
         
     - name: Copy web application to Tomcat
