@@ -14,10 +14,10 @@
         url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz
         dest: /opt
         
-    - name: Clone Java Web Calculator repository
+    - name: Clone Apache-tomcat repository
       git:
         repo: https://github.com/jessyewoma/Apache-tomcat.git
-        dest: /usr/bin/JavaWebCalculator
+        dest: /usr/bin/
         
     - name: Build Java Web Calculator
       command: /usr/bin/mvn clean install -f /opt/JavaWebCalculator/pom.xml
