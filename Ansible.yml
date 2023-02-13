@@ -1,6 +1,6 @@
 ---
 - name: Deploy Java Web Calculator
-  hosts: web-server
+  hosts: all
   become: yes
   
   tasks:
@@ -17,7 +17,7 @@
         
     - name: Clone Java Web Calculator repository
       git:
-        repo: https://github.com/CeeyIT-Solutions/JavaWebCalculator.git
+        repo: https://github.com/jessyewoma/Apache-tomcat.git
         dest: /opt/JavaWebCalculator
         
     - name: Build Java Web Calculator
