@@ -6,7 +6,7 @@
   tasks:
     - name: Install Java
       yum:
-        name: default-jdk
+        name: java-11-openjdk-devel
         state: present
         
     - name: Install Apache Tomcat
