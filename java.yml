@@ -27,7 +27,6 @@
     - name: Build Java Web Calculator
       command: /usr/bin/mvn clean install -f /opt/JavaWebCalculator/pom.xml
       args:
-        chdir: /opt/JavaWebCalculator
         
     - name: Copy web application to Tomcat
       copy:
