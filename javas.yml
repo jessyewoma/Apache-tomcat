@@ -31,10 +31,10 @@
         mode: 0755
         
     - name: Start Apache Tomcat
-     become: yes
-     service:
-     name: tomcat
-     state: started
+      become: yes
+      service:
+      name: tomcat
+      state: started
 
       
     - name: Wait for Apache Tomcat to start
