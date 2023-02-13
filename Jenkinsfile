@@ -18,7 +18,6 @@ pipeline {
             steps {
                 echo 'Deploying....'
 		ansiblePlaybook become: true, credentialsId: 'Ansible', disableHostKeyChecking: true, installation: 'ansible', inventory: 'host.inv', playbook: 'javas.yml'
-		 }
             }
         }
     }
