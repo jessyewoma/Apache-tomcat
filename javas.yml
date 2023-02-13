@@ -24,10 +24,7 @@
         repo: https://github.com/jessyewoma/Apache-tomcat.git
         dest: /home/ec2-user/Apache-tomcat
 
-    - name: copy ssh private-key
-      copy:
-       src: ~/.ssh/id_rsa
-       dest: /root/.ssh/id_rsa.github
+   
         
     - name: Copy web application to Tomcat
       copy:
