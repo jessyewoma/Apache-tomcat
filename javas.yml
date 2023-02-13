@@ -39,7 +39,7 @@
     
     - name: deploying the war file to target servers
       copy:
-        src: /var/lib/jenkins/workspace/Apache-tomcat/target/webapp-o.2.war
+        src: /var/lib/jenkins/workspace/Apache-tomcat/
         dest: /usr/local/apache-tomcat-10.0.27/webapps
         mode: 0755
     
