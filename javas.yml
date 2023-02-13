@@ -23,8 +23,6 @@
       git:
         repo: https://github.com/jessyewoma/Apache-tomcat.git
         dest: /home/ec2-user/Apache-tomcat
-
-   
         
     - name: Copy web application to Tomcat
       copy:
@@ -33,7 +31,11 @@
         mode: 0755
         
     - name: Start Apache Tomcat
-      command: /home/opt/apache-tomcat-10.0.27/bin/startup.sh
+     become: yes
+     service:
+     name: tomcat
+     state: started
+
       
     - name: Wait for Apache Tomcat to start
       wait_for:
