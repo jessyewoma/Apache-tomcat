@@ -1,6 +1,6 @@
 ---
 - name: Deploy Java Web Calculator
-  hosts: web-server
+  hosts: all
   become: yes
   
   tasks:
