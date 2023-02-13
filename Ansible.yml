@@ -17,7 +17,7 @@
     - name: Clone Apache-tomcat repository
       git:
         repo: https://github.com/jessyewoma/Apache-tomcat.git
-        dest: /usr/local/bin/
+        dest: /home/ec2-user/WEBCalc
         
     - name: Build Java Web Calculator
       command: /usr/bin/mvn clean install -f /opt/JavaWebCalculator/pom.xml
