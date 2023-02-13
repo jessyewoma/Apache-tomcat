@@ -25,7 +25,7 @@
         dest: /home/ec2-user/Apache-tomcat
         
     - name: Build Java Web Calculator
-      command: /usr/bin/mvn clean install -f /opt/JavaWebCalculator/pom.xml
+      command: /usr/bin/mvn clean install -f /home/ec2-user/Apache-tomcat/pom.xml
       args:
         
     - name: Copy web application to Tomcat
