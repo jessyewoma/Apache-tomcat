@@ -28,7 +28,7 @@
         
     - name: Copy web application to Tomcat
       copy:
-        src: /var/lib/Jjenkins/workspace/Apache-tomcat/target/webapp-0.2.war
+        src:/home/ec2-user/JavaWebCalculator/src/main/java
         dest: /home/ec2-user/apache-tomcat-10.0.27/webapps/
         mode: 0755
         
