@@ -14,6 +14,13 @@
         url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz
         dest: /opt
         
+        
+     - name: extract tomcat packages
+       unarchive:
+         src: /usr/local/apache-tomcat-10.0.27.tar.gz
+         dest: /opt
+         remote_src: yes   
+        
     - name: Install git
       yum:
         name: git
