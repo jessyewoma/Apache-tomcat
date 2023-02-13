@@ -33,7 +33,7 @@
         mode: 0755
         
     - name: Start Apache Tomcat
-      command: /home/ec2-user/apache-tomcat-10.0.27/webapps/opt/apache-tomcat-10.0.27/bin/startup.sh
+      command: /home/opt/apache-tomcat-10.0.27/bin/startup.sh
       
     - name: Wait for Apache Tomcat to start
       wait_for:
