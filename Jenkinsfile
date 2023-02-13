@@ -14,11 +14,10 @@ pipeline {
 		sh '/usr/share/maven/bin/mvn test'
             }
         }
-        stage('delopy') {
+        stage('starting Ansible deployment') {
             steps {
                 echo 'Deploying....'
-		sshagent(['Ansible'])  {
-		sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Apche-tomcat/target/webapp-0.2.war ec2-user@18.212.178.161:/home/ec2-user/apache-tomcat-10.0.27/webapps"
+		ansiblePlaybook become: true, credentialsId: 'Ansible', disableHostKeyChecking: true, installation: 'ansible', inventory: 'host.inv', playbook: 'javas.yml'
 		 }
             }
         }
