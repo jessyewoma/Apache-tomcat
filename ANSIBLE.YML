@@ -1,43 +1,28 @@
-ansible.yml
----
+
+      ---
 - name: Deploy Java Web Calculator
-  hosts: all
+  hosts: web-server
   become: yes
   
   tasks:
     - name: Install Java
       yum:
-        name: java-1.8.0-openjdk
+        name: default-jdk
         state: present
-
-        - name: Install Apache Tomcat
-      get url:
-        url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz
-        dest: /opt
         
-    - name: extract apache
+    - name: Install Apache Tomcat
       unarchive:
-        src: /opt/apache-tomcat-10.0.27
+        src: http://apache.mirrors.hoobly.com/tomcat/tomcat-9/v9.0.37/bin/apache-tomcat-9.0.37.tar.gz
         dest: /opt
-        remote_src: yes
-        
-    - name: Clone Java Web Calculator repository
-      git:
-        repo: https://github.com/jessyewoma/Apache-tomcat.git
-        dest: /opt/JavaWebCalculator
-        
-    - name: Build Java Web Calculator
-      command: /usr/bin/mvn clean install -f /opt/JavaWebCalculator/pom.xml
-      args:
-        chdir: /opt/JavaWebCalculator
+        creates: /opt/apache-tomcat-9.0.37
         
     - name: Copy web application to Tomcat
       copy:
-        src: /opt/JavaWebCalculator/target/JavaWebCalculator.war
-        dest: /opt/apache-tomcat-10.0.27/webapps/
+        src: /path/to/web-calculator.war
+        dest: /opt/apache-tomcat-9.0.37/webapps/
         
     - name: Start Apache Tomcat
-      command: /opt/apache-tomcat-10.0.27/bin/startup.sh
+      command: /opt/apache-tomcat-9.0.37/bin/startup.sh
       
     - name: Wait for Apache Tomcat to start
       wait_for:
