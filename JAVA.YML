@@ -23,7 +23,7 @@
       git:
         repo: https://github.com/jessyewoma/Apache-tomcat.git
         dest: /home/ec2-user/Apache-tomcat
-        
+        remote src: yes
         
     - name: Copy web application to Tomcat
       copy:
