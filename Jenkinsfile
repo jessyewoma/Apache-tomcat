@@ -5,13 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		sh '/usr/share/maven/bin/mvn clean package'
+		sh 'mvn clean package'
             }
         }
         stage('test') {
             steps {
                 echo 'Building..'
-		sh '/usr/share/maven/bin/mvn test'
+		sh 'mvn test'
             }
         }
         stage('starting Ansible deployment') {
