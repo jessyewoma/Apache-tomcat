@@ -5,7 +5,7 @@
   
   tasks:
     - name: Install Java
-      apt:
+      yum:
         name: default-jdk
         state: present
         
